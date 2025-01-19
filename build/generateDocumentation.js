@@ -38,6 +38,7 @@ function getCoverImage() {
     "png",
     "gif",
     "jpeg",
+    "webp",
   ]);
   for (let i = 0; i < images.length; i++) {
     const imageName = images[i].split(".")[0];
@@ -147,6 +148,7 @@ export default async function generateDocumentation() {
       "png",
       "gif",
       "jpeg",
+      "webp",
     ]);
 
     exampleFiles.forEach((file) => {

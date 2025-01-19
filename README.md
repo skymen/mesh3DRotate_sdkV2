@@ -1,4 +1,4 @@
-<img src="./src/icon.svg" width="100" /><br>
+<img src="./examples/cover.webp" width="150" /><br>
 # Mesh Rotate
 <i>Rotate an object using the mesh points</i> <br>
 ### Version 2.0.0.0
@@ -36,6 +36,7 @@ npm run dev
 ```
 
 ## Examples Files
+</br>
 - [Basic Usage](https://github.com/skymen/mesh3DRotate_sdkV2/raw/refs/heads/main/examples/Basic%20Usage.c3p)
 </br>
 
