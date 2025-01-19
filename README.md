@@ -1,14 +1,15 @@
-<img src="./src/icon.svg?rand=8697" width="100" /><br>
-# Sample Addon
-<i>Description</i> <br>
-### Version 1.0.0.0
+<img src="./src/icon.svg" width="100" /><br>
+# Mesh Rotate
+<i>Rotate an object using the mesh points</i> <br>
+### Version 2.0.0.0
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/ConstructFund/construct-addon-wizard-scaffold/releases/download/sample_addon-1.0.0.0.c3addon/sample_addon-1.0.0.0.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/mesh3DRotate_sdkV2/releases/download/skymen_mesh_rotate-2.0.0.0.c3addon/skymen_mesh_rotate-2.0.0.0.c3addon)
 <br>
-<sub> [See all releases](https://github.com/ConstructFund/construct-addon-wizard-scaffold/releases) </sub> <br>
+<sub> [See all releases](https://github.com/skymen/mesh3DRotate_sdkV2/releases) </sub> <br>
 
 ---
 <b><u>Author:</u></b> skymen <br>
+<b>[Documentation](https://www.construct.net/en/make-games/addons/1273/mesh-3d-rotate/documentation)</b>  <br>
 <sub>Made using [CAW](https://marketplace.visualstudio.com/items?itemName=skymen.caw) </sub><br>
 
 ## Table of Contents
@@ -35,20 +36,29 @@ npm run dev
 ```
 
 ## Examples Files
+- [Basic Usage](https://github.com/skymen/mesh3DRotate_sdkV2/raw/refs/heads/main/examples/Basic%20Usage.c3p)
+</br>
 
 ---
 ## Properties
 | Property Name | Description | Type |
 | --- | --- | --- |
+| Rotate X | Rotate X | float |
+| Rotate Y | Rotate Y | float |
+| Rotate Z | Rotate Z | float |
+| Use New Size | Use New Size | check |
+| Width | Width | float |
+| Height | Height | float |
 
 
 ---
 ## Actions
 | Action | Description | Params
 | --- | --- | --- |
-| Sample Action | This is a sample action | Param1             *(string)* <br> |
-| Sample Action Async | This is a sample action |  |
-| Sample Action Combo | This is a sample action | Param1             *(combo)* <br> |
+| Set Rotation From Vectors | Set the rotation of the object from up and forward vectors | Up X             *(number)* <br>Up Y             *(number)* <br>Up Z             *(number)* <br>Forward X             *(number)* <br>Forward Y             *(number)* <br>Forward Z             *(number)* <br> |
+| Set Euler Rotation | Set the rotation of the object from euler angles | Rotation X             *(number)* <br>Rotation Y             *(number)* <br>Rotation Z             *(number)* <br> |
+| Set Size | Set the size of the object | Width             *(number)* <br>Height             *(number)* <br> |
+| Set Use New Size | Set the use new size of the object | Use New Size             *(boolean)* <br> |
 | Sample Action | This is a sample action | Param1             *(string)* <br> |
 
 
@@ -56,9 +66,6 @@ npm run dev
 ## Conditions
 | Condition | Description | Params
 | --- | --- | --- |
-| Sample Condition | This is a sample condition | Param1 *(string)* <br> |
-| Sample Trigger | This is a sample trigger |  |
-| Sample Condition | This is a sample condition | Param1 *(combo)* <br> |
 | Sample Condition | This is a sample condition |  |
 
 
@@ -66,6 +73,6 @@ npm run dev
 ## Expressions
 | Expression | Description | Return Type | Params
 | --- | --- | --- | --- |
-| Expression | Sample Expression | number |  | 
-| Expression2 | Sample Expression | string |  | 
+| getHeight | Get the height of the object | number |  | 
+| getWidth | Get the width of the object | number |  | 
 | SampleExpression | This is a sample expression | string |  | 
