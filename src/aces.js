@@ -1,6 +1,6 @@
 import { action, condition, expression } from "../template/aceDefine.js";
 
-const category = "Aces_In_Single_File";
+const category = "general";
 
 action(
   category,

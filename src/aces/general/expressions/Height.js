@@ -2,12 +2,12 @@ export const config = {
   highlight: false,
   deprecated: false,
   returnType: "number",
-  description: "Sample Expression",
+  description: "Get the height of the object",
   params: [],
 };
 
-export const expose = false;
+export const expose = true;
 
 export default function () {
-  return 1002;
+  return this.useNewSize ? this.height : this.instance.height;
 }

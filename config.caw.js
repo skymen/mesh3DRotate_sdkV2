@@ -5,15 +5,16 @@ import {
   PROPERTY_TYPE,
 } from "./template/enums.js";
 import _version from "./version.js";
-export const addonType = ADDON_TYPE.PLUGIN;
+export const addonType = ADDON_TYPE.BEHAVIOR;
 export const type = PLUGIN_TYPE.OBJECT;
-export const id = "sample_addon";
-export const name = "Sample Addon";
+export const id = "skymen_mesh_rotate";
+export const name = "Mesh Rotate";
 export const version = _version;
 export const author = "skymen";
-export const website = "https://www.construct.net";
-export const documentation = "https://www.construct.net";
-export const description = "Description";
+export const website = "https://github.com/skymen/mesh3DRotate_sdkV2";
+export const documentation =
+  "https://www.construct.net/en/make-games/addons/1273/mesh-3d-rotate/documentation";
+export const description = "Rotate an object using the mesh points";
 export const category = ADDON_CATEGORY.GENERAL;
 
 export const hasDomside = false;
@@ -36,7 +37,7 @@ export const info = {
     GooglePlayServicesEnabled: false,
 
     // BEHAVIOR only
-    IsOnlyOneAllowed: false,
+    IsOnlyOneAllowed: true,
 
     // PLUGIN world only
     IsResizable: false,
@@ -50,7 +51,7 @@ export const info = {
     MustPreDraw: false,
 
     // PLUGIN object only
-    IsSingleGlobal: true,
+    IsSingleGlobal: false,
   },
   // PLUGIN only
   AddCommonACEs: {
@@ -100,4 +101,63 @@ export const properties = [
     desc: "Property Description",
   }
   */
+  {
+    type: "float",
+    id: "rotx",
+    options: {
+      initialValue: 0,
+      interpolatable: true,
+    },
+    name: "Rotate X",
+    desc: "Rotate X",
+  },
+  {
+    type: "float",
+    id: "roty",
+    options: {
+      initialValue: 0,
+      interpolatable: true,
+    },
+    name: "Rotate Y",
+    desc: "Rotate Y",
+  },
+  {
+    type: "float",
+    id: "rotz",
+    options: {
+      initialValue: 0,
+      interpolatable: true,
+    },
+    name: "Rotate Z",
+    desc: "Rotate Z",
+  },
+  {
+    type: "check",
+    id: "useNewSize",
+    options: {
+      initialValue: false,
+    },
+    name: "Use New Size",
+    desc: "Use New Size",
+  },
+  {
+    type: "float",
+    id: "width",
+    options: {
+      initialValue: 0,
+      interpolatable: true,
+    },
+    name: "Width",
+    desc: "Width",
+  },
+  {
+    type: "float",
+    id: "height",
+    options: {
+      initialValue: 0,
+      interpolatable: true,
+    },
+    name: "Height",
+    desc: "Height",
+  },
 ];
