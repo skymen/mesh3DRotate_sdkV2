@@ -1,4 +1,5 @@
 export const config = {
+  id: "Width",
   highlight: false,
   deprecated: false,
   returnType: "number",

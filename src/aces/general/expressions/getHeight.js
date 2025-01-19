@@ -1,4 +1,5 @@
 export const config = {
+  id: "Height",
   highlight: false,
   deprecated: false,
   returnType: "number",

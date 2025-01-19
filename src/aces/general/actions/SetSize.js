@@ -9,14 +9,14 @@ export const config = {
       name: "Width",
       desc: "Width",
       type: "number",
-      initialValue: 0,
+      initialValue: "",
     },
     {
       id: "height",
       name: "Height",
       desc: "Height",
       type: "number",
-      initialValue: 0,
+      initialValue: "",
     },
   ],
 };

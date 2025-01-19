@@ -32,14 +32,17 @@ export default function (parentClass) {
         this.width = properties[4];
         this.height = properties[5];
       }
-
-      this._SetMeshFromPoints(
-        this._getRectanglePointsFromEuler({
-          x: rotX,
-          y: rotY,
-          z: rotZ,
-        })
-      );
+      let onCreate = () => {
+        this._SetMeshFromPoints(
+          this._getRectanglePointsFromEuler({
+            x: rotX,
+            y: rotY,
+            z: rotZ,
+          })
+        );
+        this.removeEventListener("instancecreate", onCreate);
+      };
+      this.addEventListener("instancecreate", onCreate);
     }
 
     _trigger(method) {
@@ -94,7 +97,7 @@ export default function (parentClass) {
     }
 
     updateBbox() {
-      throw new Error("updateBbox not implemented");
+      throw new Error("Not implemented");
       const wi = this._inst.GetWorldInfo();
       wi.CalculateBbox(this.tempBbox, this.tempQuad, false);
     }
