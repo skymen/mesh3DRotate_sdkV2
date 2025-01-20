@@ -9,6 +9,7 @@
 
 ---
 <b><u>Author:</u></b> skymen <br>
+<b>[Construct Addon Page](https://www.construct.net/en/make-games/addons/1273/mesh-3d-rotate)</b>  <br>
 <b>[Documentation](https://www.construct.net/en/make-games/addons/1273/mesh-3d-rotate/documentation)</b>  <br>
 <sub>Made using [CAW](https://marketplace.visualstudio.com/items?itemName=skymen.caw) </sub><br>
 
