@@ -10,6 +10,7 @@ export const type = PLUGIN_TYPE.OBJECT;
 export const id = "skymen_mesh_rotate";
 export const name = "Mesh Rotate";
 export const version = _version;
+export const minConstructVersion = "r426";
 export const author = "skymen";
 export const website = "https://github.com/skymen/mesh3DRotate_sdkV2";
 export const documentation =

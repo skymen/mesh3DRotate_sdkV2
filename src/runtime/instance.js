@@ -97,9 +97,8 @@ export default function (parentClass) {
     }
 
     updateBbox() {
-      throw new Error("Not implemented");
-      const wi = this._inst.GetWorldInfo();
-      wi.CalculateBbox(this.tempBbox, this.tempQuad, false);
+      this.tempBbox = this.instance.getBoundingBox(true);
+      this.tempQuad = this.instance.getBoundingQuad(true);
     }
 
     worldPosToRelative(x, y) {
