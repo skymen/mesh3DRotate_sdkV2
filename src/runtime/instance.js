@@ -20,28 +20,27 @@ export default function (parentClass) {
       };
 
       this.tempBbox = C3.New(C3.Rect);
-      let rotX = 0;
-      let rotY = 0;
-      let rotZ = 0;
+      this._init_rotX = 0;
+      this._init_rotY = 0;
+      this._init_rotZ = 0;
       if (properties) {
-        rotX = properties[0];
-        rotY = properties[1];
-        rotZ = properties[2];
+        this._init_rotX = properties[0];
+        this._init_rotY = properties[1];
+        this._init_rotZ = properties[2];
         this.useNewSize = properties[3];
         this.width = properties[4];
         this.height = properties[5];
       }
-      let onCreate = () => {
-        this._SetMeshFromPoints(
-          this._getRectanglePointsFromEuler({
-            x: rotX,
-            y: rotY,
-            z: rotZ,
-          })
-        );
-        this.removeEventListener("instancecreate", onCreate);
-      };
-      this.addEventListener("instancecreate", onCreate);
+    }
+
+    _postCreate() {
+      this._SetMeshFromPoints(
+        this._getRectanglePointsFromEuler({
+          x: this._init_rotX,
+          y: this._init_rotY,
+          z: this._init_rotZ,
+        })
+      );
     }
 
     _trigger(method) {
