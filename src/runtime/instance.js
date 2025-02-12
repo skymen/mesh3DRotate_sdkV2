@@ -20,7 +20,6 @@ export default function (parentClass) {
       };
 
       this.tempBbox = C3.New(C3.Rect);
-      this.tempQuad = C3.New(C3.Quad);
       let rotX = 0;
       let rotY = 0;
       let rotZ = 0;
@@ -98,13 +97,12 @@ export default function (parentClass) {
 
     updateBbox() {
       this.tempBbox = this.instance.getBoundingBox(true);
-      this.tempQuad = this.instance.getBoundingQuad(true);
     }
 
     worldPosToRelative(x, y) {
       return [
-        (x - this.tempBbox.getLeft()) / this.tempBbox.width(),
-        (y - this.tempBbox.getTop()) / this.tempBbox.height(),
+        (x - this.tempBbox.left) / this.tempBbox.width,
+        (y - this.tempBbox.top) / this.tempBbox.height,
       ];
     }
 
