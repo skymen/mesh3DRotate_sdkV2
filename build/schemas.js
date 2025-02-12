@@ -1,4 +1,5 @@
 import Joi from "joi";
+import { minConstructVersion } from "../config.caw";
 
 // Define the paramSchema
 const paramSchema = Joi.object({
@@ -208,6 +209,7 @@ const configSchema = Joi.object({
   version: Joi.string()
     .regex(/\d+\.\d+\.\d+\.\d+/)
     .required(),
+  minConstructVersion: Joi.string().valid(minConstructVersion).optional(),
   author: Joi.string().required(),
   website: Joi.string().required(),
   documentation: Joi.string().required(),
