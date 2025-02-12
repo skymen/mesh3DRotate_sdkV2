@@ -1,9 +1,9 @@
 <img src="./examples/cover.webp" width="150" /><br>
 # Mesh Rotate
 <i>Rotate an object using the mesh points</i> <br>
-### Version 2.0.0.3
+### Version 2.0.0.4
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/mesh3DRotate_sdkV2/releases/download/skymen_mesh_rotate-2.0.0.3.c3addon/skymen_mesh_rotate-2.0.0.3.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/mesh3DRotate_sdkV2/releases/download/skymen_mesh_rotate-2.0.0.4.c3addon/skymen_mesh_rotate-2.0.0.4.c3addon)
 <br>
 <sub> [See all releases](https://github.com/skymen/mesh3DRotate_sdkV2/releases) </sub> <br>
 

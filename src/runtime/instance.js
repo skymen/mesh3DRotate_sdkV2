@@ -133,17 +133,17 @@ export default function (parentClass) {
         y: points.topLeft[1],
         zElevation: points.topLeft[2],
       });
-      wi.setMeshPoint(0, 1, {
+      inst.setMeshPoint(0, 1, {
         x: points.topRight[0],
         y: points.topRight[1],
         zElevation: points.topRight[2],
       });
-      wi.setMeshPoint(1, 0, {
+      inst.setMeshPoint(1, 0, {
         x: points.bottomLeft[0],
         y: points.bottomLeft[1],
         zElevation: points.bottomLeft[2],
       });
-      wi.setMeshPoint(1, 1, {
+      inst.setMeshPoint(1, 1, {
         x: points.bottomRight[0],
         y: points.bottomRight[1],
         zElevation: points.bottomRight[2],
