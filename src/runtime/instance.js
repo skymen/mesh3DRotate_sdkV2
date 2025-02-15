@@ -19,7 +19,7 @@ export default function (parentClass) {
         z: 1,
       };
 
-      this.tempBbox = C3.New(C3.Rect);
+      this.tempQuad = C3.New(C3.Quad);
       this._init_rotX = 0;
       this._init_rotY = 0;
       this._init_rotZ = 0;
@@ -94,15 +94,66 @@ export default function (parentClass) {
       return width === 2 && height === 2;
     }
 
+    interpolateQuad(u, v, quad) {
+      // Extract the top-left corner position
+      const topLeftX = quad.p1.x;
+      const topLeftY = quad.p1.y;
+
+      // Compute the edge vectors
+      const topEdgeX = quad.p2.x - topLeftX;
+      const topEdgeY = quad.p2.y - topLeftY;
+      const leftEdgeX = quad.p4.x - topLeftX;
+      const leftEdgeY = quad.p4.y - topLeftY;
+
+      // Compute interpolated position
+      const x = topLeftX + topEdgeX * u + leftEdgeX * v;
+      const y = topLeftY + topEdgeY * u + leftEdgeY * v;
+
+      return [x, y];
+    }
+
+    inverseInterpolateQuad(xWorld, yWorld, quad) {
+      // Extract the corner coordinates
+      const tlx = quad.p1.x,
+        tly = quad.p1.y;
+      const trx = quad.p2.x,
+        try_ = quad.p2.y;
+      const blx = quad.p4.x,
+        bly = quad.p4.y;
+
+      // Compute the vectors
+      const dxT = trx - tlx,
+        dyT = try_ - tly;
+      const dxB = blx - tlx,
+        dyB = bly - tly;
+
+      // Compute the relative position of (xWorld, yWorld)
+      const dx = xWorld - tlx,
+        dy = yWorld - tly;
+
+      // Solve for (t, e) using Cramer's Rule
+      const det = dxT * dyB - dyT * dxB; // Determinant of the transformation matrix
+
+      if (Math.abs(det) < 1e-6) {
+        throw new Error(
+          "Degenerate quad transformation (determinant is too close to zero)."
+        );
+      }
+
+      // Compute the inverse matrix components
+      const t = (dx * dyB - dy * dxB) / det;
+      const e = (dy * dxT - dx * dyT) / det;
+
+      return [t, e]; // Return normalized coordinates
+    }
+
     updateBbox() {
-      this.tempBbox = this.instance.getBoundingBox(true);
+      this.tempQuad = this.instance.getBoundingQuad(true);
     }
 
     worldPosToRelative(x, y) {
-      return [
-        (x - this.tempBbox.left) / this.tempBbox.width,
-        (y - this.tempBbox.top) / this.tempBbox.height,
-      ];
+      const [t, e] = this.inverseInterpolateQuad(x, y, this.tempQuad);
+      return [t, e];
     }
 
     _SetMeshFromPoints(points) {
