@@ -19,6 +19,12 @@ export default function (parentClass) {
         z: 1,
       };
 
+      this.lastEuler = {
+        x: 0,
+        y: 0,
+        z: 0,
+      };
+
       this.tempQuad = C3.New(C3.Quad);
       this._init_rotX = 0;
       this._init_rotY = 0;
@@ -62,6 +68,9 @@ export default function (parentClass) {
         lastForwardX: this.lastForward.x,
         lastForwardY: this.lastForward.y,
         lastForwardZ: this.lastForward.z,
+        lastEulerX: this.lastEuler.x,
+        lastEulerY: this.lastEuler.y,
+        lastEulerZ: this.lastEuler.z,
       };
     }
 
@@ -78,6 +87,11 @@ export default function (parentClass) {
         x: o.lastForwardX,
         y: o.lastForwardY,
         z: o.lastForwardZ,
+      };
+      this.lastEuler = {
+        x: o.lastEulerX,
+        y: o.lastEulerY,
+        z: o.lastEulerZ,
       };
     }
 
@@ -213,9 +227,11 @@ export default function (parentClass) {
 
       return points;
     }
+
     _getRectanglePoints(up, forward) {
       this.lastUp = up;
       this.lastForward = forward;
+      this.lastEuler = this.getEulerAngles();
       let width = this.getWidth();
       let height = this.getHeight();
       // Normalize the up and forward vectors
@@ -276,6 +292,7 @@ export default function (parentClass) {
         bottomRight,
       });
     }
+
     _getVectorsFromEuler(euler) {
       // Convert Euler angles (in degrees) to radians
       function toRadians(degrees) {
@@ -340,9 +357,30 @@ export default function (parentClass) {
         forward: transformedForward,
       };
     }
+
     _getRectanglePointsFromEuler(euler) {
       const vectors = this._getVectorsFromEuler(euler);
       return this._getRectanglePoints(vectors.up, vectors.forward);
+    }
+
+    getEulerAngles() {
+      const up = this.lastUp;
+      const forward = this.lastForward;
+
+      // Calculate Euler angles from the up and forward vectors
+      function calculateEulerAngles(up, forward) {
+        const pitch = Math.asin(-up[1]);
+        const yaw = Math.atan2(forward[0], forward[2]);
+        const roll = Math.atan2(up[0], up[2]);
+
+        return {
+          x: (pitch * 180) / Math.PI,
+          y: (yaw * 180) / Math.PI,
+          z: (roll * 180) / Math.PI,
+        };
+      }
+
+      return calculateEulerAngles(up, forward);
     }
   };
 }

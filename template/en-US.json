@@ -112,41 +112,33 @@
                 "desc": "Use New Size"
               }
             }
-          },
-          "SampleAction": {
-            "list-name": "Sample Action",
-            "display-text": "Sample Action {0}",
-            "description": "This is a sample action",
-            "params": {
-              "param1": {
-                "name": "Param1",
-                "desc": "This is a sample param"
-              }
-            }
           }
         },
-        "conditions": {
-          "SampleCondition": {
-            "list-name": "Sample Condition",
-            "display-text": "Sample Condition",
-            "description": "This is a sample condition",
-            "params": {}
-          }
-        },
+        "conditions": {},
         "expressions": {
           "Height": {
             "translated-name": "getHeight",
             "description": "Get the height of the object",
             "params": {}
           },
+          "rotX": {
+            "translated-name": "getRotX",
+            "description": "Get the X rotation of the object",
+            "params": {}
+          },
+          "rotY": {
+            "translated-name": "getRotY",
+            "description": "Get the Y rotation of the object",
+            "params": {}
+          },
+          "rotZ": {
+            "translated-name": "getRotZ",
+            "description": "Get the Z rotation of the object",
+            "params": {}
+          },
           "Width": {
             "translated-name": "getWidth",
             "description": "Get the width of the object",
-            "params": {}
-          },
-          "SampleExpression": {
-            "translated-name": "SampleExpression",
-            "description": "This is a sample expression",
             "params": {}
           }
         }

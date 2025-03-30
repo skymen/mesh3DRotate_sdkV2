@@ -1,9 +1,9 @@
 <img src="./examples/cover.webp" width="150" /><br>
 # Mesh Rotate
 <i>Rotate an object using the mesh points</i> <br>
-### Version 2.0.0.6
+### Version 2.0.1.0
 
-[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/mesh3DRotate_sdkV2/releases/download/skymen_mesh_rotate-2.0.0.6.c3addon/skymen_mesh_rotate-2.0.0.6.c3addon)
+[<img src="https://placehold.co/200x50/4493f8/FFF?text=Download&font=montserrat" width="200"/>](https://github.com/skymen/mesh3DRotate_sdkV2/releases/download/skymen_mesh_rotate-2.0.1.0.c3addon/skymen_mesh_rotate-2.0.1.0.c3addon)
 <br>
 <sub> [See all releases](https://github.com/skymen/mesh3DRotate_sdkV2/releases) </sub> <br>
 
@@ -61,14 +61,12 @@ npm run dev
 | Set Euler Rotation | Set the rotation of the object from euler angles | Rotation X             *(number)* <br>Rotation Y             *(number)* <br>Rotation Z             *(number)* <br> |
 | Set Size | Set the size of the object | Width             *(number)* <br>Height             *(number)* <br> |
 | Set Use New Size | Set the use new size of the object | Use New Size             *(boolean)* <br> |
-| Sample Action | This is a sample action | Param1             *(string)* <br> |
 
 
 ---
 ## Conditions
 | Condition | Description | Params
 | --- | --- | --- |
-| Sample Condition | This is a sample condition |  |
 
 
 ---
@@ -76,5 +74,7 @@ npm run dev
 | Expression | Description | Return Type | Params
 | --- | --- | --- | --- |
 | getHeight | Get the height of the object | number |  | 
+| getRotX | Get the X rotation of the object | number |  | 
+| getRotY | Get the Y rotation of the object | number |  | 
+| getRotZ | Get the Z rotation of the object | number |  | 
 | getWidth | Get the width of the object | number |  | 
-| SampleExpression | This is a sample expression | string |  | 
